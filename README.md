@@ -32,7 +32,7 @@ Register Address(es)|Data type|Contents|writable?|Remarks
 I wrote this sketch to track my gas volume meter.
 The meter ("Kromschröder/Elster BK-G4") has a small magnet in the rightmost digits roll that can be sensed in a groove underneath it.
 
-I finally found a reed sensor sensible enough to detect the passing magnet (PIC PMC-1401), after trialling a couple before and some hall sensors as well.
+I finally found a reed sensor sensitive enough to detect the passing magnet (PIC PMC-1401), after trialling a couple before and some hall sensors as well.
 This reed sensor will pull the pulse-counting GPIO to GND whenever the magnet passes it.
 
 The meter is a mechanical one, hence the pulse speed is moderately low - normally the frequency is well below 1Hz.
