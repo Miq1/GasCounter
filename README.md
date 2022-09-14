@@ -13,7 +13,7 @@ This is a universal pulse counter sketch:
 - Serial debug switch
 
 ### Schematic
-(TBD)
+![Fritzing schematic](https://github.com/Miq1/GasCounter/blob/master/GasCounterSchematic.png?raw=true)
 
 ### Modbus register list
 Register Address(es)|Data type|Contents|writable?|Remarks
