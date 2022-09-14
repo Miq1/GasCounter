@@ -30,9 +30,14 @@ Register Address(es)|Data type|Contents|writable?|Remarks
 
 ### Application
 I wrote this sketch to track my gas volume meter.
-This meter ("Kromschröder/Elster BK-G4") has a small magnet in the rightmost digits roll that can be sensed in a groove underneath it.
+The meter ("Kromschröder/Elster BK-G4") has a small magnet in the rightmost digits roll that can be sensed in a groove underneath it.
+
 I finally found a reed sensor sensible enough to detect the passing magnet (PIC PMC-1401), after trialling a couple before and some hall sensors as well.
 This reed sensor will pull the pulse-counting GPIO to GND whenever the magnet passes it.
+
 The meter is a mechanical one, hence the pulse speed is moderately low - normally the frequency is well below 1Hz.
-The interrupt-driven counting mechanism in the sketch would be able to catch much higher frequencies, but then the history counters will quickly overflow
-(253 pulses in 180s is the maximum, that is, ca. 1.4Hz = 121,440 pulses a day).
+The interrupt-driven counting mechanism in the sketch would be able to catch much higher frequencies, but then the history counters will quickly overflow.
+253 pulses in 180s is the maximum, that is, ca. 1.4Hz = 121,440 pulses a day.
+This value again is exceeding the daily counters' capacities of 65535, but the main pulse counter will be correct up to the 121,440.
+
+On the other hand, 121,440 pulses are equivalent to 1214,4 m³ gas consumption, i.e. about 13,000 kWh a day - if I ever will need those, I will have interesting problems anyway...
